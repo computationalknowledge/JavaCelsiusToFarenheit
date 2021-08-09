@@ -1,0 +1,35 @@
+public class MainApplication{
+	
+	private static float inputTemperature = 20f;
+	private static String typeOftempature = "C";
+
+	public static void main(String args []){
+		ApplicationController ac = new ApplicationController(new Float(inputTemperature), new String(typeOftempature));
+	}
+}
+
+class ApplicationController{
+	TemperatureConverter tc = new TemperatureConverter();
+
+	public ApplicationController(float temp, String tempType){
+		DisplayOutput.displayOut(tc.Convert(tempType, temp));
+	}
+
+}
+
+class TemperatureConverter{
+	// see the formula for the processing algorithm here:
+	// °F = (°C × 9/5) + 32
+	// call ProcessInput to set the unit values
+	public float Convert(String type, float temp){
+		return ((temp * 9/5) +32);
+	}
+}
+
+
+class DisplayOutput{
+	public static void displayOut(float outputTemp){
+		System.out.println(outputTemp);
+	}
+
+}
