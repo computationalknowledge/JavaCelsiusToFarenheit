@@ -1,3 +1,5 @@
+Video Walk through of Solution:  https://app.knowmia.com/s1xa
+
 public class MainApplication{
 	
 	private static float inputTemperature = 20f;
